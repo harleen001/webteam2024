@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-family: Montserrat, serif;
+    max-width: 100%;
+}
+
+.ul1 {
+    display: flex;
+}
+
+.nav-link {
+    display: flex;
+    padding: 1.5rem;
+}
+
+.voucher-link {
+    display: flex;
+
+}
+
+.top,
+.top .nav-link {
+    font-size: 0.689rem;
+    font-weight: 300;
+    gap: 0;
+}
+
+.top {
+    border-bottom: .1rem solid rgba(128, 128, 128, 0.188);
+}
+
+.top>* {
+    border: rgba(128, 128, 128, 0.188) 0.1rem solid;
+    border-right: 0rem;
+    border-bottom: 0rem;
+}
+
+.top>*:nth-last-of-type(1) {
+    border-right: rgba(128, 128, 128, 0.188) 0.1rem solid;
+    margin-inline-end: 6rem;
+}
+
+.top>*:nth-of-type(1) {
+    flex-grow: 1;
+    padding-inline-start: 4rem;
+}
+
+.bottom {
+    padding-inline: 3.6rem;
+    justify-content: space-between;
+    padding-block: 2.25rem;
+    padding-right: 6rem;
+    align-items: center;
+}
+
+.ul1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ul1:nth-of-type(2) .nav-link {
+    padding-inline: 2rem;
+    flex-grow: 1;
+}
+
+.ul1:nth-of-type(3) {
+    align-self: flex-start;
+    margin-top: 1.7rem;
+}
+
+.ul1:nth-last-of-type(1){
+    display: flex;
+    flex-grow: 0.5;
+    gap: 1.5rem;
+}
+
+.ul1:nth-last-of-type(1) .icon{
+    scale: 1.2;
+    cursor: pointer;
+}
+
+.bottom .nav-link {
+    color: #555555;
+    cursor: pointer;
+    font-size: 0.817rem;
+    font-weight: 700;
+    padding-top: 0.7rem;
+    padding-bottom: 2.2rem;
+}
+
+.bottom .nav-link:hover {
+    color: rgb(150, 183, 108);
+}
+
+#logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.42857;
+    color: rgb(68, 68, 68);
+    display: flex;
+    padding: 1rem;
+}
+
+.voucher1 {
+    background: rgb(150, 183, 108);
+    color: #fff;
+    padding: 0.6rem 1rem;
+    margin: 0.9rem;
+    border-radius: 0.3rem;
+    margin-right: 0.4rem;
+}
+
+.voucher2 {
+    padding-left: 0.4rem;
+}
+
+.icon {
+    margin-left: 0.3rem;
+    color: rgb(128, 128, 128);
+}
+
+.top i {
+    scale: 0.7;
+    cursor: pointer;
+}
