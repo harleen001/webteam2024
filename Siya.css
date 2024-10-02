@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 .hero-section{
+    margin-top: 10rem;
     background-color: #eeeeef;
     width:100%;  
     display:flex;
@@ -55,7 +56,139 @@
     width:10rem;
 
 }
-
-.icons{
+.hero-icons{
     display:flex;
+    justify-content: space-evenly;
+    border-bottom:0.3px solid #424141b6;
 }
+.hero-icons a img {
+    height:50px;
+    width:50px;
+}
+.hero-icons a{
+    text-decoration: none;
+    color:black;
+    border-right:0.3px solid #424141b6;
+    padding:1rem;
+}
+.hero-icons a:hover {
+    background-color: #96B76C;
+}
+
+/*PRODUCT IMAGES SECTION */
+.product-imgs{
+    display:flex;
+    margin-top:6rem;
+    justify-content: space-evenly;
+}
+.product1{
+    background-color:#eeeeef;
+    height:400px;
+    width:300px;
+    padding:2rem;
+    margin-right:1.5rem;
+}
+.product1 img {
+    height:360px;
+    width:250px;
+    opacity:0.9;
+}
+.product1 h2 {
+    font-family: "Montserrat", "sans-serif";
+    text-align: center;
+    color:#333333de;
+}
+.product1 p{
+    color:#757575;
+    text-align: center;
+}
+.product2{
+    display: flex;
+    background-color:#eeeeef;
+    padding:1rem;
+    width:450px;
+    height:400px;
+    margin-right:1.5rem;
+}
+.product2 img {
+    height:380px;
+    width:250px;
+    background-size: cover;
+}
+.product2-text{
+    margin-top: 3rem;
+    width:300px;
+}
+.product2-text h3{
+    color:#666666;
+    font-weight: 400;
+}
+.product2-text h2{
+    color:#5c4a3f;
+    font-weight: 700;
+    font-family: "Montserrat", "sans-serif";
+}
+.product2-text p{
+    text-align: center;
+    color:#757575;
+    margin-bottom: 2rem;
+}
+.product2-text a {
+    border:0.3px solid #757575;
+    padding:0.8rem;
+    text-align:center;
+    text-decoration: none;
+    color:#666666;
+    margin-left: 1rem;
+    border-radius: 1rem;
+}
+.product2-text a:hover{
+    border:2px solid #e19824;
+}
+
+.product3{
+    display:flex;
+    background-color: #eeeeef;
+    width:400px;
+    height:400px;
+    padding:1rem;
+}
+.product3 img {
+    background-size: cover;
+    height:350px;
+    width:300px;
+}
+#a{
+    color:#333333;
+    font-weight: 700;
+    font-family: "Montserrat", "sans-serif";
+}
+.product3-text{
+    margin-top: 3rem;
+}
+.product3-text h2{
+    color:#96B76C;
+    font-weight: 700;
+    font-family: "Montserrat", "sans-serif";
+}
+.product3-text p{
+    text-align: center;
+    color:#757575;
+    margin-bottom: 2rem;
+}
+.product3-text a{
+    border:0.3px solid #757575;
+    padding:0.8rem;
+    text-align:center;
+    text-decoration: none;
+    color:#666666;
+    margin-left: 1rem;
+    border-radius: 1rem;
+}
+.product3-text a:hover{
+    border:2px solid #e19824;
+}
+
+
+
+
