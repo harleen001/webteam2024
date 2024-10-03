@@ -472,6 +472,7 @@ body {
         /* max-width: 30vw; */
         width: 30vw;
     }
+    
 }
 
 @media screen and (max-width: 992px) {
@@ -507,6 +508,10 @@ body {
         width: 41vw;
         /* max-width: 40vw; */
     }
+    
+    .blog-card {
+        width: 41vw;
+    }
 
     .carnav {
         flex-direction: column;
@@ -515,6 +520,9 @@ body {
 
     .cardTray {
         padding-inline: 3rem;
+    }
+    .next1, .next{
+        right: 1rem;
     }
 }
 
@@ -525,9 +533,15 @@ body {
 
     }
 
+    .blog-card {
+        width: 98vw;
+        padding-left: 0;
+    }
+
     .card-product {
         min-width: 98vw;
         max-width: 98vw;
+        padding-left: 0;
     }
 
     .carnav {
