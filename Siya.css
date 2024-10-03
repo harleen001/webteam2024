@@ -72,9 +72,7 @@
     justify-content: space-evenly;
     border-bottom:0.3px solid #424141b6;
     height:80px;
-    width:187px;
-    align-items:center;
-
+    width:100%;
 }
 .hero-icons a img {
     height:50px;
@@ -118,6 +116,7 @@
     font-family: "Montserrat", "sans-serif";
     text-align: center;
     color:#333333de;
+    font-weight:700;
 }
 .product1 p{
     color:#757575;
@@ -208,7 +207,7 @@
 .product3-text p{
     text-align: center;
     color:#757575;
-    margin-bottom: 2rem;
+    margin-bottom: 1.8rem;
 }
 .product3-text a{
     border:0.3px solid #757575;
@@ -263,7 +262,10 @@
     display: flex;
     flex-direction: column;
 }
+.product{
+    max-width: 100%;
 
+}
 @media(max-width:1231px){
     .product-imgs{
         flex-wrap:wrap;
@@ -273,7 +275,7 @@
         align-items:center;
         flex-direction: column;
     }
-    
+   
     .product{
         height:415px;
         width:720px;
@@ -325,6 +327,9 @@
     .product3{
         height:415px;
         width:480px;
+    }
+    .product3-text a{
+        margin-left:5rem;
     }
 }
 @media(max-width:650px){
