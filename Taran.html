@@ -14,9 +14,16 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
   <body>
+    <!-- navbar -->
     <nav class="navbar top">
       <div class="voucher-link">
         <span class="voucher1 nav-link">USE VOUCHER SALE 25%</span>
@@ -24,8 +31,12 @@
           >BEST DISCOUNTS AND VOUCHER CODES FOR ONLINE STORES</span
         >
       </div>
-      <div class="currency nav-link">USD <i class=" icon fa fa-angle-down"></i></div>
-      <div class="language nav-link">ENGLISH <i class=" icon fa fa-angle-down"></i></div>
+      <div class="currency nav-link">
+        USD <i class="icon fa fa-angle-down"></i>
+      </div>
+      <div class="language nav-link">
+        ENGLISH <i class="icon fa fa-angle-down"></i>
+      </div>
       <div class="register nav-link">REGISTER OR SIGN IN</div>
     </nav>
     <nav class="navbar bottom">
@@ -41,10 +52,25 @@
         <li class="nav-link">ABOUT US</li>
       </ul>
       <ul class="ul1 end">
-        <i class=" icon fa fa-search"></i>
-        <i class=" icon fa fa-shopping-cart"></i>
+        <i class="icon fa fa-search"></i>
+        <i class="icon fa fa-shopping-cart"></i>
       </ul>
     </nav>
+    <!-- first carousel -->
+    <div class="car1">
+      <nav class="carnav">
+        <ul class="ul2 carleft">
+          <li class="carhead">FEATURED PRODUCTS</li>
+        </ul>
+        <ul class="ul2 carright">
+          <li class="car-link car-active">CHAIRS</li>
+          <li class="car-link">LIGHTS</li>
+          <li class="car-link">SOFAS</li>
+          <li class="car-link">ACCESSORIES</li>
+        </ul>
+      </nav>
+    </div>
+    <script src="./observerAPI.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
