@@ -4,9 +4,16 @@
     box-sizing: border-box;
 }
 
+html, body{
+    min-width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .hero-section{
     background-color: #eeeeef;
     max-width:100%;  
+    width: 100vw;
     display:flex;
     justify-content: center;
     height:550px;
@@ -128,7 +135,7 @@
     padding:1rem;
     width:450px;
     height:400px;
-    margin-right:1.5rem;
+ 
 }
 .product2 img {
     height:380px;
@@ -266,6 +273,12 @@
     max-width: 100%;
 
 }
+.hero-icons div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
 @media(max-width:1231px){
     .product-imgs{
         flex-wrap:wrap;
@@ -285,6 +298,12 @@
 }
 
 @media screen and (max-width: 992px) {
+    .product-imgs{
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        max-width: 100%;
+    }
     br:nth-last-of-type(1){
         display: none;
     }
@@ -315,6 +334,23 @@
     }
     .product {
         height: max-content !important;
+        width: 96vw !important;
+    }
+    .subs-img img{
+        width: 100%;
+        object-fit: contain;
+    }
+    .subscribe{
+        padding: 0.5rem; 
+        margin: 0.5rem;
+        width: 96vw;
+    }
+    .hero-text{
+        display: flex;
+        flex-direction: column  ;
+    }
+    .product2  p{
+        text-align: left ;
     }
 }
 
@@ -337,6 +373,7 @@
         height:615px;
         width:500px;
         flex-direction: column;
+        margin-right: 2rem;
     }
     .product2-text h3{
         margin:0;
@@ -347,11 +384,24 @@
     .img2{
         align-self: center;
     }
-    
+    .product{
+        padding: 0.5rem;
+        margin: 0.5rem;
+    }
+    .product1{
+        margin-top: 2rem;
+    }
+    .hero-img, .hero-text{
+        padding: 0.4rem;
+    }
+    .product img{
+        object-fit: contain;
+    }
 }
 @media(max-width:1024px){
     .hero-icons{
         visibility: hidden;
+        display: none;
     }
     .product-imgs{
         margin:0;
