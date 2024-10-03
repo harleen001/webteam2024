@@ -117,16 +117,22 @@ const addCards = () => {
     car1.removeChild(oldcardTray);
   }
   car1.appendChild(cardTray);
+  const prevB = document.querySelector(".prev");
+  const nextB = document.querySelector(".next");
 
+  if (prevB && nextB) {
+    car1.removeChild(prevB);
+    car1.removeChild(nextB);
+  }
   const prevBtn = document.createElement("span");
   prevBtn.classList.add("prev");
   const nextBtn = document.createElement("span");
   nextBtn.classList.add("next");
-  
+
   const prevIcon = document.createElement("i");
   prevIcon.classList.add("fa", "fa-angle-left");
   prevBtn.appendChild(prevIcon);
-  
+
   const nextIcon = document.createElement("i");
   nextIcon.classList.add("fa", "fa-angle-right");
   nextBtn.appendChild(nextIcon);
@@ -158,7 +164,7 @@ const moveFirstToLast = (tray) => {
 
 const mutationCallback = (mutationsList) => {
   mutationsList.forEach((mutation) => {
-    if (mutation.type === 'childList') {
+    if (mutation.type === "childList") {
       console.log("Card tray has been updated.");
     }
   });
@@ -167,7 +173,6 @@ const mutationCallback = (mutationsList) => {
 const observer = new MutationObserver(mutationCallback);
 
 addCards();
-
 
 observer.observe(car1, { childList: true });
 

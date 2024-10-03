@@ -361,7 +361,7 @@ body {
     padding: 1rem;
     border-radius: 0.3rem;
     aspect-ratio: 1;
-    
+    border:  0.1rem solid rgba(128, 128, 128, 0.188);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -439,22 +439,31 @@ body {
 
 @media screen and (max-width: 820px) {
     .card-product {
-        width: 40vw;
+        width: 41vw;
         /* max-width: 40vw; */
     }
     .carnav{
         flex-direction: column;
         gap: 1rem;
     }
+    .cardTray{
+        padding-inline: 3rem;
+    }
 }
 
 @media screen and (max-width: 576px) {
 
-    .card-product {
-        width: 70vw;
-        max-width: 70vw;
+    .cardTray{
+        padding-inline: 1rem;
+        
     }
-
+    .card-product {
+        min-width: 98vw;
+        max-width: 98vw;
+    }
+    .carnav{
+        padding: 1rem;
+    }
     #logo,
     .menu {
         font-size: 1.4rem;
