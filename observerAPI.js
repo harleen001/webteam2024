@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".card-product").forEach((card) => {
         observer.observe(card); 
       });
+      document.querySelectorAll(".blog-card").forEach((card) => {
+        observer.observe(card); 
+      });
     };
   
     observeCards();

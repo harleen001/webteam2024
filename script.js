@@ -1,3 +1,7 @@
+// const debugLog = (message) => {
+//   console.log(`[Debug] ${message}`);
+// };
+
 const menu = document.querySelector(".menu");
 const carLink = document.querySelectorAll(".car-link");
 const ulMiddle = document.querySelector(".middle");
@@ -57,14 +61,12 @@ const products = {
       price: "$299",
     },
   ],
-
   accessories: [
     { url: `imagess/vase.png`, title: "Decorative Vase", price: "$25" },
     { url: `imagess/vase2.jpg`, title: "Wall Art", price: "$75" },
     { url: `imagess/vase3.png`, title: "Table Vase", price: "$45" },
     { url: `imagess/study_lamp.png`, title: "Table Lamp", price: "$35" },
   ],
-
   sofas: [
     { url: `imagess/sofa.png`, title: "Leather Sectional Sofa", price: "$899" },
     {
@@ -73,7 +75,6 @@ const products = {
       price: "$699",
     },
   ],
-
   lamps: [
     { url: `imagess/lamp1.png`, title: "Floor Standing Lamp", price: "$150" },
     { url: `imagess/lamp2.png`, title: "Modern Table Lamp", price: "$75" },
@@ -82,6 +83,7 @@ const products = {
     { url: `imagess/lamp5.png`, title: "Night Lamp", price: "$170" },
   ],
 };
+
 const addCards = () => {
   const categorisedProducts = {
     [activeState]: products[activeState].filter((item) => item.price !== ""),
@@ -117,17 +119,17 @@ const addCards = () => {
     car1.removeChild(oldcardTray);
   }
   car1.appendChild(cardTray);
-  const prevB = document.querySelector(".prev");
-  const nextB = document.querySelector(".next");
+  const prevB = document.querySelector(".prev1");
+  const nextB = document.querySelector(".next1");
 
   if (prevB && nextB) {
     car1.removeChild(prevB);
     car1.removeChild(nextB);
   }
   const prevBtn = document.createElement("span");
-  prevBtn.classList.add("prev");
+  prevBtn.classList.add("prev1");
   const nextBtn = document.createElement("span");
-  nextBtn.classList.add("next");
+  nextBtn.classList.add("next1");
 
   const prevIcon = document.createElement("i");
   prevIcon.classList.add("fa", "fa-angle-left");
@@ -136,7 +138,7 @@ const addCards = () => {
   const nextIcon = document.createElement("i");
   nextIcon.classList.add("fa", "fa-angle-right");
   nextBtn.appendChild(nextIcon);
-  
+
   car1.appendChild(prevBtn);
   car1.appendChild(nextBtn);
 
@@ -146,19 +148,43 @@ const addCards = () => {
   observer.observe(cardTray, { childList: true });
 };
 
+const setupBlogCarouselControls = () => {
+  const blogCarousel = document.querySelector(".blogs.car2");
+  if (!blogCarousel) {
+    return;
+  }
+
+  const prev2 = blogCarousel.querySelector(".secondprev");
+  const next2 = blogCarousel.querySelector(".secondnext");
+  const cardTrayBlog = blogCarousel.querySelector(".cardTray-blog");
+
+  if (!prev2 || !next2 || !cardTrayBlog) {
+    return;
+  }
+
+  prev2.addEventListener("click", () => {
+    moveLastToFirst(cardTrayBlog);
+  });
+
+  next2.addEventListener("click", () => {
+    moveFirstToLast(cardTrayBlog);
+  });
+};
+
 const moveLastToFirst = (tray) => {
-  if (tray.lastChild) {
-    const lastChild = tray.lastChild;
+  if (tray.lastElementChild) {
+    const lastChild = tray.lastElementChild;
     tray.removeChild(lastChild);
     tray.prepend(lastChild);
   }
 };
 
 const moveFirstToLast = (tray) => {
-  if (tray.firstChild) {
-    const firstChild = tray.firstChild;
+  if (tray.firstElementChild) {
+    const firstChild = tray.firstElementChild;
     tray.removeChild(firstChild);
     tray.appendChild(firstChild);
+  } else {
   }
 };
 
@@ -176,18 +202,6 @@ addCards();
 
 observer.observe(car1, { childList: true });
 
-next.onclick = () => {
-  if (cardTray.firstChild) {
-    const firstChild = cardTray.firstChild;
-    cardTray.removeChild(firstChild);
-    cardTray.appendChild(firstChild);
-  }
-};
-
-prev.onclick = () => {
-  if (cardTray.lastChild) {
-    const lastChild = cardTray.lastChild;
-    cardTray.removeChild(lastChild);
-    cardTray.prepend(lastChild);
-  }
-};
+document.addEventListener("DOMContentLoaded", () => {
+  setupBlogCarouselControls();
+});
