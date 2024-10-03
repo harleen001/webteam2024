@@ -2,11 +2,22 @@ const menu = document.querySelector(".menu");
 const ulMiddle = document.querySelector(".middle");
 const bottom = document.querySelector(".bottom");
 const div = document.createElement("div");
-div.classList.add("mobmenu");
+const hamburger = document.querySelector(".fa-bars"); 
+div.classList.add("mobmenu", "hide");
 bottom.appendChild(div);
-const list = Array.from(ulMiddle.children).map((element) => {
+
+Array.from(ulMiddle.children).forEach((element) => {
   div.appendChild(element);
 });
+
 menu.onclick = () => {
-    div.classList.toggle("hide");
+  div.classList.toggle("hide"); 
+
+  if (hamburger.classList.contains("fa-bars")) {
+    hamburger.classList.remove("fa-bars");
+    hamburger.classList.add("fa-xmark");
+  } else {
+    hamburger.classList.remove("fa-xmark");
+    hamburger.classList.add("fa-bars");
+  }
 };
