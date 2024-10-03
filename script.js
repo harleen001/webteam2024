@@ -1,4 +1,5 @@
 const menu = document.querySelector(".menu");
+
 const ulMiddle = document.querySelector(".middle");
 const bottom = document.querySelector(".bottom");
 const div = document.createElement("div");
@@ -7,8 +8,10 @@ div.classList.add("mobmenu", "hide");
 bottom.appendChild(div);
 
 Array.from(ulMiddle.children).forEach((element) => {
-  div.appendChild(element);
-});
+    const clonedElement = element.cloneNode(true);
+    div.appendChild(clonedElement); 
+  });
+  
 
 menu.onclick = () => {
   div.classList.toggle("hide"); 
