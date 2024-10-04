@@ -485,7 +485,8 @@ body {
     transform: translateY(-1rem);
 }
 
-.cart, .searchbar {
+.cart,
+.searchbar {
     display: none;
     flex-direction: column;
     position: absolute;
@@ -500,7 +501,7 @@ body {
     padding: 1rem;
 }
 
-.searchbar input{
+.searchbar input {
     background: #00000000;
     outline: none !important;
     border: 0.1rem solid #e5e5e5;
@@ -510,7 +511,7 @@ body {
     color: #e3e3e3;
 }
 
-.searchbar{
+.searchbar {
     z-index: 1000;
 }
 
@@ -587,7 +588,7 @@ body {
     padding-inline: 1rem;
 }
 
-.padding{
+.padding {
     padding: 2rem;
 }
 
@@ -773,6 +774,23 @@ body {
     background: rgb(150, 183, 108);
     color: #fff;
     cursor: pointer;
+}
+
+.empty {
+    display: flex;
+    padding: 0.9rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #555555;
+    cursor: pointer;
+}
+
+.cart-buttons-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.empty:hover {
+    background: rgb(255, 110, 110);
 }
 
 .card-img {

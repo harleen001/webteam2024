@@ -384,31 +384,50 @@ function updateCart() {
   if (productItemsInCart.length) {
     badge.innerText = productItemsInCart.length;
     badge.classList.add("show");
-  } else if (badge.classList.contains("show")) {
-    badge.classList.remove("show");
-  } else if (!productItemsInCart) {
-    cart.innerHTML = `<span class="title">No items here yet!</span>`;
-  }
-  productItemsInCart.forEach((product) => {
-    const item = document.createElement("div");
-    price += Number.parseFloat(product.price.replace(/[^0-9.-]+/g, ""));
 
-    item.innerHTML = `
-      <div class="cart-product">
-        <div class="img"><img src="${product.url}" alt="err"></div>
-        <div class="details">
-            <div class="title">${product.title}</div>
-            <div class="price">${product.price}</div>
+    productItemsInCart.forEach((product) => {
+      const item = document.createElement("div");
+      price += Number.parseFloat(product.price.replace(/[^0-9.-]+/g, ""));
+
+      item.innerHTML = `
+        <div class="cart-product">
+          <div class="img"><img src="${product.url}" alt="err"></div>
+          <div class="details">
+              <div class="title">${product.title}</div>
+              <div class="price">${product.price}</div>
+          </div>
         </div>
-      </div>
-    `;
-    cart.appendChild(item);
-  });
+      `;
+      cart.appendChild(item);
+    });
 
-  cart.innerHTML += `<div class='cart-end'><span class="price-cart">Total: $${price.toFixed(
-    2
-  )}</span> <hr> <button class="cart-button readmore">Checkout</button></div>`;
+    cart.innerHTML += `
+      <div class='cart-end'>
+        <span class="price-cart">Total: $${price.toFixed(2)}</span>
+        <hr>
+        <div class="cart-buttons-container">
+  <button class="cart-button readmore">Checkout</button>
+  <button class="cart-button empty">
+    <i class="fa fa-trash"></i>
+  </button>
+</div>
+
+      </div>`;
+
+    const emptyCartButton = cart.querySelector('.empty');
+    emptyCartButton.addEventListener('click', emptyCart);
+  } else {
+    badge.classList.remove("show");
+    cart.innerHTML = `<span class="title padding">No items here yet!</span>`;
+  }
 }
+
+
+function emptyCart() {
+  productsInCart = [];
+  productItemsInCart = [];
+  updateCart();
+}   
 
 const observer = new MutationObserver((mutations) => {
   mutations.forEach((mutation) => {
