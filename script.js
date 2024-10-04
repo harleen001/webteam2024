@@ -1,7 +1,7 @@
 // const debugLog = (message) => {
 //   console.log(`[Debug] ${message}`);
 // };
-
+const badge = document.querySelector(".badge");
 const menu = document.querySelector(".menu");
 const carLink = document.querySelectorAll(".car-link");
 const ulMiddle = document.querySelector(".middle");
@@ -45,72 +45,152 @@ Array.from(carLink).forEach(
     })
 );
 
-const products = {
-  chairs: [
-    { url: `imagess/chair1.png`, title: "Modern Lounge Chair", price: "$199" },
-    { url: `imagess/chair2.png`, title: "Classic Wooden Chair", price: "$149" },
-    {
-      url: `imagess/chair3.png`,
-      title: "Ergonomic Office Chair",
-      price: "$249",
-    },
-    { url: `imagess/chair4.png`, title: "Outdoor Patio Chair", price: "$89" },
-    {
-      url: `imagess/chair5.png`,
-      title: "Recliner Leather Chair",
-      price: "$299",
-    },
-  ],
-  accessories: [
-    { url: `imagess/vase.png`, title: "Decorative Vase", price: "$25" },
-    { url: `imagess/vase2.jpg`, title: "Wall Art", price: "$75" },
-    { url: `imagess/vase3.png`, title: "Table Vase", price: "$45" },
-    { url: `imagess/study_lamp.png`, title: "Table Lamp", price: "$35" },
-  ],
-  sofas: [
-    { url: `imagess/sofa.png`, title: "Leather Sectional Sofa", price: "$899" },
-    {
-      url: `imagess/chair1.png`,
-      title: "Leather Sectional Sofa",
-      price: "$699",
-    },
-  ],
-  lamps: [
-    { url: `imagess/lamp1.png`, title: "Floor Standing Lamp", price: "$150" },
-    { url: `imagess/lamp2.png`, title: "Modern Table Lamp", price: "$75" },
-    { url: `imagess/lamp3.png`, title: "Rustic Table Lamp", price: "$90" },
-    { url: `imagess/lamp4.png`, title: "Modern Lamp", price: "$90" },
-    { url: `imagess/lamp5.png`, title: "Night Lamp", price: "$170" },
-  ],
-};
+const products = [
+  {
+    id: 1,
+    category: "chairs",
+    url: "imagess/chair1.png",
+    title: "Modern Lounge Chair",
+    price: "$199",
+  },
+  {
+    id: 2,
+    category: "chairs",
+    url: "imagess/chair2.png",
+    title: "Classic Wooden Chair",
+    price: "$149",
+  },
+  {
+    id: 3,
+    category: "chairs",
+    url: "imagess/chair3.png",
+    title: "Ergonomic Office Chair",
+    price: "$249",
+  },
+  {
+    id: 4,
+    category: "chairs",
+    url: "imagess/chair4.png",
+    title: "Outdoor Patio Chair",
+    price: "$89",
+  },
+  {
+    id: 5,
+    category: "chairs",
+    url: "imagess/chair5.png",
+    title: "Recliner Leather Chair",
+    price: "$299",
+  },
+  {
+    id: 6,
+    category: "accessories",
+    url: "imagess/vase.png",
+    title: "Decorative Vase",
+    price: "$25",
+  },
+  {
+    id: 7,
+    category: "accessories",
+    url: "imagess/vase2.jpg",
+    title: "Wall Art",
+    price: "$75",
+  },
+  {
+    id: 8,
+    category: "accessories",
+    url: "imagess/vase3.png",
+    title: "Table Vase",
+    price: "$45",
+  },
+  {
+    id: 9,
+    category: "accessories",
+    url: "imagess/study_lamp.png",
+    title: "Table Lamp",
+    price: "$35",
+  },
+  {
+    id: 10,
+    category: "sofas",
+    url: "imagess/sofa.png",
+    title: "Leather Sectional Sofa",
+    price: "$899",
+  },
+  {
+    id: 11,
+    category: "sofas",
+    url: "imagess/chair1.png",
+    title: "Leather Sectional Sofa",
+    price: "$699",
+  },
+  {
+    id: 12,
+    category: "lamps",
+    url: "imagess/lamp1.png",
+    title: "Floor Standing Lamp",
+    price: "$150",
+  },
+  {
+    id: 13,
+    category: "lamps",
+    url: "imagess/lamp2.png",
+    title: "Modern Table Lamp",
+    price: "$75",
+  },
+  {
+    id: 14,
+    category: "lamps",
+    url: "imagess/lamp3.png",
+    title: "Rustic Table Lamp",
+    price: "$90",
+  },
+  {
+    id: 15,
+    category: "lamps",
+    url: "imagess/lamp4.png",
+    title: "Modern Lamp",
+    price: "$90",
+  },
+  {
+    id: 16,
+    category: "lamps",
+    url: "imagess/lamp5.png",
+    title: "Night Lamp",
+    price: "$170",
+  },
+];
 
 const addCards = () => {
-  const categorisedProducts = {
-    [activeState]: products[activeState].filter((item) => item.price !== ""),
-  };
+  const categorisedProducts = products.filter(
+    (product) => product.category === activeState && product.price !== ""
+  );
+
   const cardTray = document.createElement("div");
   cardTray.classList.add("cardTray");
 
-  categorisedProducts[activeState].map((product) => {
+  categorisedProducts.map((product) => {
     const card = document.createElement("div");
     card.classList.add("card-product");
+
     card.innerHTML = `
-      <div class="card">
-        <img class="card-img" src=${product.url} alt="">
-        <h2 class="card-title">${product.title}</h2>
-        <span class="price">${product.price}</span>
-        <div class="button-plate">
-            <button class="addtocart">ADD TO CART</button>
-            <button class="like"><i class="fa fa-heart"></i></button>
-            <button class="expand"><i class="fa fa-compress"></i></button>
-        </div>
-      </div>`;
+    <div class="card">
+      <img class="card-img" src=${product.url} alt="${product.title}">
+      <h2 class="card-title">${product.title}</h2>
+      <span class="price">${product.price}</span>
+      <div class="button-plate">
+          <button class="addtocart" data-id=${product.id}>ADD TO CART</button>
+          <button class="like"><i class="fa fa-heart"></i></button>
+          <button class="expand"><i class="fa fa-compress"></i></button>
+      </div>
+    </div>`;
+
     card.onmouseover = () => {
       card.classList.add("cardhover");
     };
     card.onmouseleave = () => {
       card.classList.remove("cardhover");
     };
+
     cardTray.appendChild(card);
   });
 
@@ -145,7 +225,7 @@ const addCards = () => {
   prevBtn.onclick = () => moveLastToFirst(cardTray);
   nextBtn.onclick = () => moveFirstToLast(cardTray);
 
-  observer.observe(cardTray, { childList: true });
+  addToCartListeners();
 };
 
 const setupBlogCarouselControls = () => {
@@ -187,21 +267,171 @@ const moveFirstToLast = (tray) => {
   } else {
   }
 };
+let productsInCart = [];
+let productItemsInCart = [];
+const cart = document.createElement("div");
+cart.innerHTML = `<span class="title padding">No items here yet!</span>`;
+cart.classList.add("cart");
 
-const mutationCallback = (mutationsList) => {
-  mutationsList.forEach((mutation) => {
-    if (mutation.type === "childList") {
-      console.log("Card tray has been updated.");
-    }
-  });
+let fadeOutSearch;
+const searchIcon = document.querySelector(".searchIcon");
+const searchbar = searchIcon.querySelector(".searchbar");
+
+searchIcon.onmouseover = () => {
+  clearTimeout(fadeOutSearch);
+  searchbar.classList.add("show");
+  if (searchbar.classList.contains("fade-out")) {
+    searchbar.classList.remove("fade-out");
+  }
+  searchbar.classList.add("fade-in");
 };
 
-const observer = new MutationObserver(mutationCallback);
+searchIcon.onmouseleave = () => {
+  if (searchbar.classList.contains("fade-in")) {
+    searchbar.classList.remove("fade-in");
+  }
+  searchbar.classList.add("fade-out");
+  fadeOutSearch = setTimeout(() => {
+    if (!searchIcon.matches(":hover")) {
+      searchbar.classList.remove("show");
+    }
+  }, 1000);
+};
+
+searchbar.onmouseenter = () => {
+  clearTimeout(fadeOutSearch);
+  if (searchbar.classList.contains("fade-out")) {
+    searchbar.classList.remove("fade-out");
+  }
+  searchbar.classList.add("show", "fade-in");
+};
+
+searchbar.onmouseleave = () => {
+  if (searchbar.classList.contains("fade-in")) {
+    searchbar.classList.remove("fade-in");
+  }
+  searchbar.classList.add("fade-out");
+  fadeOutSearch = setTimeout(() => {
+    if (!searchIcon.matches(":hover")) {
+      searchbar.classList.remove("show");
+    }
+  }, 2000);
+};
+
+let fadeOut;
+
+const cartIcon = document.querySelector("#cart-shopping");
+cartIcon.appendChild(cart);
+
+cartIcon.onmouseover = () => {
+  clearTimeout(fadeOut);
+  cart.classList.add("show");
+  if (cart.classList.contains("fade-out")) {
+    cart.classList.remove("fade-out");
+  }
+  cart.classList.add("fade-in");
+};
+
+cartIcon.onmouseleave = () => {
+  if (cart.classList.contains("fade-in")) {
+    cart.classList.remove("fade-in");
+  }
+  cart.classList.add("fade-out");
+  fadeOut = setTimeout(() => {
+    if (!cart.matches(":hover")) {
+      cart.classList.remove("show");
+    }
+  }, 2000);
+};
+
+cart.onmouseenter = () => {
+  clearTimeout(fadeOut);
+  if (cart.classList.contains("fade-out")) {
+    cart.classList.remove("fade-out");
+  }
+  cart.classList.add("show", "fade-in");
+};
+
+cart.onmouseleave = () => {
+  if (cart.classList.contains("fade-in")) {
+    cart.classList.remove("fade-in");
+  }
+  cart.classList.add("fade-out");
+  fadeOut = setTimeout(() => {
+    if (!cartIcon.matches(":hover")) {
+      cart.classList.remove("show");
+    }
+  }, 2000);
+};
+function addToCartListeners() {
+  const atcs = document.querySelectorAll(".addtocart");
+  atcs.forEach((btn) => {
+    btn.onclick = () => {
+      productsInCart = [...productsInCart, btn.dataset.id];
+      productItemsInCart = products.filter((product) =>
+        productsInCart.includes(product.id.toString())
+      );
+
+      updateCart();
+    };
+  });
+}
+let price = 0;
+
+function updateCart() {
+  cart.innerHTML = "";
+  price = 0;
+  if (productItemsInCart.length) {
+    badge.innerText = productItemsInCart.length;
+    badge.classList.add("show");
+  } else if (badge.classList.contains("show")) {
+    badge.classList.remove("show");
+  } else if (!productItemsInCart) {
+    cart.innerHTML = `<span class="title">No items here yet!</span>`;
+  }
+  productItemsInCart.forEach((product) => {
+    const item = document.createElement("div");
+    price += Number.parseFloat(product.price.replace(/[^0-9.-]+/g, ""));
+
+    item.innerHTML = `
+      <div class="cart-product">
+        <div class="img"><img src="${product.url}" alt="err"></div>
+        <div class="details">
+            <div class="title">${product.title}</div>
+            <div class="price">${product.price}</div>
+        </div>
+      </div>
+    `;
+    cart.appendChild(item);
+  });
+
+  cart.innerHTML += `<div class='cart-end'><span class="price-cart">Total: $${price.toFixed(
+    2
+  )}</span> <hr> <button class="cart-button readmore">Checkout</button></div>`;
+}
+
+const observer = new MutationObserver((mutations) => {
+  mutations.forEach((mutation) => {
+    if (mutation.type === "childList") {
+      addToCartListeners();
+    }
+  });
+});
+
+observer.observe(car1, { childList: true, subtree: true });
 
 addCards();
-
-observer.observe(car1, { childList: true });
 
 document.addEventListener("DOMContentLoaded", () => {
   setupBlogCarouselControls();
 });
+
+const cartObserver = new MutationObserver((mutations) => {
+  mutations.forEach((mutation) => {
+    if (mutation.type === "childList") {
+      console.log("Cart updated:");
+    }
+  });
+});
+
+cartObserver.observe(cart, { childList: true });

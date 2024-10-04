@@ -26,18 +26,18 @@
     <!-- navbar -->
     <nav class="navbar top">
       <div class="voucher-link">
-        <span class="voucher1 nav-link">USE VOUCHER SALE 25%</span>
-        <span class="voucher2 nav-link"
+        <span class="voucher1 nav-item">USE VOUCHER SALE 25%</span>
+        <span class="voucher2 nav-item"
           >BEST DISCOUNTS AND VOUCHER CODES FOR ONLINE STORES</span
         >
       </div>
-      <div class="currency nav-link">
+      <div class="currency nav-item">
         USD <i class="icon fa fa-angle-down"></i>
       </div>
-      <div class="language nav-link">
+      <div class="language nav-item">
         ENGLISH <i class="icon fa fa-angle-down"></i>
       </div>
-      <div class="register nav-link">REGISTER OR SIGN IN</div>
+      <div class="register nav-item">REGISTER OR SIGN IN</div>
     </nav>
     <nav class="navbar bottom">
       <ul class="ul1">
@@ -45,22 +45,25 @@
         <li class="logo" id="logo">FUTURELIFE</li>
       </ul>
       <ul class="ul1 middle">
-        <li class="nav-link">STORES</li>
-        <li class="nav-link">PROJECTS</li>
-        <li class="nav-link">COLLECTION</li>
-        <li class="nav-link">BLOG</li>
-        <li class="nav-link">ABOUT US</li>
+        <li class="nav-item"><a class="nav-link" href="#">STORES</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">PROJECTS</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Collections">COLLECTION</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#blog">BLOG</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">ABOUT US</a></li>
       </ul>
+
       <ul class="ul1 end">
-        <i class="icon fa fa-search"></i>
-        <i class="icon fa fa-shopping-cart"></i>
+        <i class="icon fa fa-search searchIcon"><div class="searchbar"><input type="search" id="searchbar" placeholder="Enter keywords"></div></i>
+        <i class="icon fa fa-shopping-cart" id="cart-shopping"><span class="badge" id="cart-count"></span></i>
       </ul>
     </nav>
     <!-- first carousel -->
     <div class="car1">
       <nav class="carnav">
         <ul class="ul2 carleft">
-          <li class="carhead">FEATURED PRODUCTS</li>
+          <li class="carhead" id="Collections">FEATURED PRODUCTS</li>
         </ul>
         <ul class="ul2 carright">
           <li class="car-link car-active">CHAIRS</li>
@@ -71,7 +74,7 @@
       </nav>
     </div>
     <!-- second-carousel(blogs) -->
-    <div class="blogs car2">
+    <div class="blogs car2" id="blog">
       <h2 class="carhead">FROM OUR BLOG</h2>
       <span class="prev secondprev"><i class="fa fa-angle-left"></i></span>
       <span class="next secondnext"><i class="fa fa-angle-right"></i></span>
@@ -239,7 +242,7 @@
       <!-- End container -->
     </footer>
     <script src="./observerAPI.js"></script>
-
+    <script src="./cart.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
