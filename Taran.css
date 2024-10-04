@@ -468,6 +468,7 @@ body {
     font-family: "Montserrat", serif;
     color: rgba(68, 68, 68, 0.594);
     flex-basis: 50%;
+    flex-grow: 1;
     min-width: max-content;
     display: flex;
     align-items: center;
