@@ -28,7 +28,7 @@ body {
 
 
 
-.navbar {
+.navbar-main {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -263,6 +263,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
+    border: none !important;
     gap: 0.81rem;
 }
 
@@ -495,6 +496,7 @@ body {
     z-index: 100;
     top: 1.5rem;
     right: 0;
+    font-size: 0.6rem;
 }
 
 .searchbar {
@@ -761,6 +763,10 @@ body {
     flex-direction: row;
 }
 
+.subscribe {
+    margin-bottom: 0;
+}
+
 .next1,
 .next {
     right: 1rem;
@@ -873,6 +879,10 @@ body {
         margin-inline-end: 0;
     }
 
+    .price {
+        font-size: 1.2rem !important;
+    }
+
     .top {
         justify-content: flex-end;
     }
@@ -958,11 +968,33 @@ body {
     .next {
         right: 1rem;
     }
+
+    #footer p,
+    #footer a {
+        font-size: 0.8rem;
+    }
+
+    .product a {
+        width: 12rem;
+        line-height: normal;
+        margin-bottom: 2rem;
+        margin-left: 0 !important;
+    }
+
+    .product3 a {
+        display: flex;
+        align-self: center;
+        margin-left: 0 !important;
+        align-items: center;
+        justify-content: center;
+    }
+
 }
 
 @media screen and (max-width: 576px) {
 
-    .carhead {
+    .carhead,
+    #footer h3 {
         font-size: 1.1rem;
     }
 
@@ -1020,6 +1052,8 @@ body {
     .top .nav-item {
         padding: 1rem;
     }
+
+
 }
 
 @media screen and (min-width: 992px) {
