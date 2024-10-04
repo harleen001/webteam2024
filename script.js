@@ -414,20 +414,22 @@ function updateCart() {
 
       </div>`;
 
-    const emptyCartButton = cart.querySelector('.empty');
-    emptyCartButton.addEventListener('click', emptyCart);
+    const emptyCartButton = cart.querySelector(".empty");
+    emptyCartButton.addEventListener("click", emptyCart);
   } else {
     badge.classList.remove("show");
     cart.innerHTML = `<span class="title padding">No items here yet!</span>`;
   }
 }
 
-
 function emptyCart() {
   productsInCart = [];
   productItemsInCart = [];
   updateCart();
-}   
+  const badge = document.querySelector(".badge");
+  badge.innerHTML = 0;
+  badge.classList.remove("show");
+}
 
 const observer = new MutationObserver((mutations) => {
   mutations.forEach((mutation) => {
