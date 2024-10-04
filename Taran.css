@@ -403,7 +403,7 @@ body {
 }
 
 .intersecting {
-    animation: fade-in 1s ease;
+    animation: fade-in 0.3s ease;
 }
 
 .invisible {
@@ -528,9 +528,31 @@ body {
 
 @media screen and (max-width: 576px) {
 
+    .carhead{
+        font-size: 1.1rem;
+    }
+
+    .car-link{
+        font-size: 0.8rem;
+        font-weight: 400;
+        border-bottom: 0.1rem rgb(0, 0, 0, 0) solid;
+        padding-bottom: 0.5rem;
+    }
+
+    .carright{
+        justify-content: space-between;
+    }
+
+    .car-active{
+        border-bottom: 0.1rem rgb(150, 183, 108) solid; 
+    }
+
     .cardTray {
         padding-inline: 1rem;
+    }
 
+    .blogs{
+        padding-inline: 1rem;
     }
 
     .blog-card {
@@ -541,7 +563,10 @@ body {
     .card-product {
         min-width: 98vw;
         max-width: 98vw;
-        padding-left: 0;
+    }
+
+    .cardTray{
+        padding-left: 0.2rem;
     }
 
     .carnav {

@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   
     const options = {
-      threshold: 0.5,
+      threshold: 0.35,
       root: null,
       margin: 0,
     };
