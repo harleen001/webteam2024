@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
   
     const options = {
       threshold: 0.35,
-      root: null,
       margin: 0,
+      rootMargin: '0px 0px 10000px 0px', 
     };
   
     const observer = new IntersectionObserver(callback, options);
@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".blog-card").forEach((card) => {
         observer.observe(card); 
       });
+    
     };
   
     observeCards();
