@@ -38,9 +38,8 @@ body {
     max-width: 100%;
 }
 
-.ul1 {
-    display: flex;
-}
+
+
 
 .nav-item {
     display: flex;
@@ -200,6 +199,26 @@ body {
 
 .mobmenu .nav-item:nth-last-of-type(1) {
     border-bottom: rgba(128, 128, 128, 0.188) 0.1rem solid;
+}
+
+.ul1,
+.ul2,
+.menu,
+#footer p {
+    display: flex;
+    padding-inline: 0;
+    margin-inline: 0;
+    margin-top: 0;
+
+}
+
+#footer p {
+    margin-bottom: 0;
+    align-items: center;
+}
+
+.footer-half p {
+    flex-direction: column;
 }
 
 .hide {
@@ -453,6 +472,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 1;
 }
 
 .like,
@@ -790,6 +810,10 @@ body {
     cursor: pointer;
 }
 
+.menu {
+    display: none !important;
+}
+
 .cart-buttons-container {
     display: flex;
     gap: 0.5rem;
@@ -843,9 +867,25 @@ body {
     }
 }
 
-@media screen and (min-width: 2000px) {
-    .imgs-car {
-        width: 100%;
+
+
+@media screen and (max-width: 992px) {
+    .voucher-link {
+        display: none;
+    }
+
+    .card-product {
+        flex-basis: 30vw;
+        width: 30vw;
+    }
+
+    .menu {
+        display: flex !important;
+    }
+
+    .carnav {
+        margin-block: 1rem;
+        margin-bottom: 0;
     }
 }
 
@@ -859,6 +899,12 @@ body {
         width: 30vw;
     }
 
+}
+
+@media screen and (min-width: 2000px) {
+    .imgs-car {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 992px) {
